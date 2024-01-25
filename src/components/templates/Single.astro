@@ -8,36 +8,42 @@ const options = {
 }
 ---
 
-<h1 class="text-3xl font-semibold">{node.title}</h1>
-<!-- Display categories links if node has terms -->
-{
-  node.categories
-    ? node.categories.nodes.map(category => (
-        <a class="term-link" href={category.uri}>
-          {category.name}
-        </a>
-      ))
-    : null
-}
+<h1 class="text-6xl font-['Zen_Dots'] text-primary my-2">{node.title}</h1>
+<div class="flex gap-2 mb-2">
+  <!-- Display categories links if node has terms -->
+  {
+    node.categories
+      ? node.categories.nodes.map(category => (
+          <a class="term-link" href={category.uri}>
+            {category.name}
+          </a>
+        ))
+      : null
+  }
+</div>
 <!-- Only show date if node is a Post -->
 {
   node.__typename === 'Post' ? (
-    <p class="post-details">
+    <p class="text-primary text-xl post-details mb-4">
       Publicado em <time datetime={node.date}>{new Date(node.date).toLocaleDateString('pt-BR', options)}</time>
     </p>
   ) : null
 }
-<img
-  class="featured-image"
-  src={node.featuredImage?.node?.mediaItemUrl}
-  srcset={node.featuredImage?.node?.srcSet}
-  alt={node.featuredImage?.node?.altText}
-  loading="lazy"
-  width={node.featuredImage?.node?.mediaDetails?.width}
-  height={node.featuredImage?.node?.mediaDetails?.height}
-/>
-
-<article set:html={node.content} />
+<figure class="mb-4 w-4/5 mx-auto">
+  <img
+    class="featured-image"
+    src={node.featuredImage?.node?.mediaItemUrl}
+    srcset={node.featuredImage?.node?.srcSet}
+    alt={node.featuredImage?.node?.altText}
+    loading="lazy"
+    width={node.featuredImage?.node?.mediaDetails?.width}
+    height={node.featuredImage?.node?.mediaDetails?.height}
+  />
+  <figcaption set:html={node.featuredImage?.node?.description}></figcaption>
+</figure>
+<div class="mb-20">
+  <article set:html={node.content} />
+</div>
 
 <style is:global>
   .wp-block-image img {
@@ -52,7 +58,6 @@ const options = {
     height: auto;
   }
   .post-details {
-    color: darkgrey;
     font-weight: 300;
   }
   a.term-link {

@@ -8,18 +8,21 @@ const options = {
 };
 ---
 
-<article>
+<article class="post__card">
     <a class='post-link' href={post.uri} aria-label={post.title}>
         <h3 class="text-primary-content">{post.title}</h3>
         <section>
-            <img
-                src={post?.featuredImage?.node?.mediaItemUrl}
-                alt={post?.featuredImage?.node?.altText}
-                srcset={post?.featuredImage?.node?.srcSet}
-                loading='lazy'
-                width={post?.featuredImage?.node?.mediaDetails?.width}
-                height={post?.featuredImage?.node?.mediaDetails?.height}
-            >
+            <div>
+                <img
+                    src={post?.featuredImage?.node?.mediaItemUrl}
+                    alt={post?.featuredImage?.node?.altText}
+                    srcset={post?.featuredImage?.node?.srcSet}
+                    loading='lazy'
+                    width={post?.featuredImage?.node?.mediaDetails?.width}
+                    height={post?.featuredImage?.node?.mediaDetails?.height}
+                >
+                <p set:html={post?.featuredImage?.node?.caption}></p>
+            </div>
             <div>
                 <div set:html={post.excerpt} class="text-base-content"></div>
                 { post.categories.nodes.map(category => {
@@ -37,7 +40,6 @@ const options = {
         border-radius: 10px;
         margin: 1.5rem 0;
         padding: .5rem 1rem 1rem 1rem;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
     }
     article:hover {

@@ -6,6 +6,7 @@ It's a continuation of the original [Astro WordPress Starter](https://astro.buil
 
 [✍️ Read the step-by-step tutorial](https://developers.wpengine.com/blog/building-a-headless-wordpress-site-with-astro)
 [📹 Watch the video](https://www.youtube.com/watch?v=BcoxZZIfESI)
+
 The authentication part I'm confident that I'll put somewhere available soon.
 
 ## Requirements
@@ -16,6 +17,7 @@ The authentication part I'm confident that I'll put somewhere available soon.
 Add a variable to your `.env` and then hit `npm run dev`:
 
 `GRAPHQL_URL = https://yoursitename.com/graphql`
+
 `GRAPHQL_PASSWORD = yoursupersecurepassword`
 
 ### Routing and Templates
@@ -55,6 +57,13 @@ WP Engine's Atlas platform provides a performant and user-friendly hosting platf
 ## Notes
 
 Almost all README from the original project was preserved, after all I just create a different theme, just a shell of the great work done before.
+
+The dates were set to Brazilian Portuguese locale, it's very simple to set to any locale, just use yours with appropriate string, like `toLocaleDateString('en-US', options)`. The options are very easy to understand as well, `options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}`.
 
 ### Quick install
 

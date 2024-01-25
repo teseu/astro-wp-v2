@@ -1,4 +1,4 @@
-root {
+:root {
   --true-blue: #0466c8ff;
   --sapphire: #0353a4ff;
   --yale-blue: #023e7dff;
@@ -9,13 +9,42 @@ root {
   --paynes-gray: #5c677dff;
   --slate-gray: #7d8597ff;
   --cool-gray: #979dacff;
+  --russian-violet: #b579f5;
+  --russian-violet-2: #40285aff;
+  --russian-violet-3: #17002cff;
 }
 
 
   html[data-theme='night'] {
     --pc: 88.34% 0.0663 206.71;
+    .post__card{
+    box-shadow: rgba(209, 209, 255, 0.25) 0px 2px 5px -1px, rgba(181, 173, 255, 0.3) 0px 1px 3px -1px;
+    }
+    .post__card:hover {
+      box-shadow: rgba(209, 209, 255, 0.25) 0px 13px 27px -5px, rgba(181, 173, 255, 0.3) 0px 8px 16px -8px;
+    }
   }
 
   html[data-theme='business'] {
-    /* --pc: 0.883407 0.019811 251.473931; */
+    --p: 0.817036 0.099057 251.474;
+    .post__card{
+      box-shadow: rgba(89, 57, 17, 0.25) 0px 2px 5px -1px, rgba(67, 38, 2, 0.25) 0px 1px 3px -1px;
+      }
+      .post__card:hover {
+        box-shadow: rgba(89, 57, 17, 0.25) 0px 13px 27px -5px, rgba(67, 38, 2, 0.25) 0px 8px 16px -8px;
+      }
+  }
+
+  html[data-theme='emerald'] {
+    --p: 0.366626 0.135433 153.45;
+    .post__card{
+      box-shadow: rgba(4, 19, 8, 0.25) 0px 2px 5px -1px, rgba(2, 48, 14, 0.25) 0px 1px 3px -1px;
+      }
+      .post__card:hover {
+        box-shadow: rgba(4, 19, 8, 0.25) 0px 13px 27px -5px, rgba(2, 48, 14, 0.25) 0px 8px 16px -8px;
+      }
+  }
+
+  p {
+    margin-bottom: 1rem !important;
   }

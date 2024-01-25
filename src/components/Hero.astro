@@ -2,20 +2,35 @@
 
 ---
 
-<section>
+<section class="hero">
     <h1>Hello, web friend! 🌎 Thanks for visiting</h1>
     <p></p>
 </section>
+
+<style is:global>
+    [data-theme="emerald"] .hero {
+      background: linear-gradient(90deg, var(--true-blue) 0%,var(--russian-violet) 100%);
+    }
+    
+    [data-theme="business"] .hero {
+      background: linear-gradient(90deg,var(--oxford-blue-2) 0%,var(--russian-violet-2) 100%);
+    }
+    
+    [data-theme="night"] .hero {
+      background: linear-gradient(90deg,var(--oxford-blue-3) 0%,var(--russian-violet-3) 100%);
+    }
+    
+    </style>
 
 <style>
     section {
         box-sizing: border-box;
         min-height: 450px;
-        background: linear-gradient(90deg,#0076dc 0%,#7a1ba6 100%);
         border-radius: 10px;
         color: #fff;
         font-size: 2rem;
         padding: 4rem 3rem;
+        margin-top: 1.5rem;
     }
     h1 {
        text-align: center;

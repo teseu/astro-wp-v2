@@ -1,9 +1,9 @@
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ['"Red Hat Display"'],
+      sans: ['"Red Hat Display"', '"Zen Dots"', 'Ruda'],
       mono: ['"Fira Code Mono"'],
-      display: ['Quicksand', '"Zen Dots"'],
+      display: ['Quicksand'],
     },
     colors: {
       tolopea: {

@@ -5,9 +5,11 @@ import Temas from './ThemeSwitch.astro'
 
 <header class="font-xl">
   <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <a href="/" class="site-name flex items-center gap-1 btn btn-ghost text-2xl font-semibold font-['Ruda']"
-      > {generalSettings.title}</a>
+    <div class="flex-1 items-center">
+      <a href="/" class="site-name h-auto flex items-center gap-1 text-2xl font-semibold font-['Zen_Dots']"
+      > 
+        <div class="w-40 h-16 logo bg-no-repeat bg-contain"></div>
+        {generalSettings.title}</a>
     </div>
     <nav class="font-2xl bg-base-100">
       <ul class="menu menu-horizontal font-2xl px-1">
@@ -24,9 +26,6 @@ import Temas from './ThemeSwitch.astro'
       <Temas />
     </nav>
   </div>
-  <div>
-    
-  </div>
   <div class="hamburger text-primary">&#9776;</div>
 </header>
 
@@ -42,7 +41,22 @@ import Temas from './ThemeSwitch.astro'
   }
 </script>
 
+<style is:global>
+[data-theme="emerald"] .logo {
+  background-image: url("/teseu-logo.png");
+}
+
+[data-theme="business"] .logo {
+  background-image: url("/teseu-logo-clara.png");
+}
+
+[data-theme="night"] .logo {
+  background-image: url("/teseu-logo-clara.png");
+}
+
+</style>
 <style>
+
   header {
     height: 60px;
     display: flex;

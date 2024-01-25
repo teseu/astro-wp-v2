@@ -28,15 +28,15 @@ export async function navQuery(){
     return data;
 }
 
-export async function homePagePostsQuery(){
-    const response = await fetch(import.meta.env.GRAPHQL_URL, {
-        method: 'post',
-        headers: {
+export async function homePagePostsQuery() {
+  const response = await fetch(import.meta.env.GRAPHQL_URL, {
+    method: 'post',
+    headers: {
       'Content-Type': 'application/json',
       Authorization: import.meta.env.GRAPHQL_PASSWORD,
     },
-        body: JSON.stringify({
-            query: `{
+    body: JSON.stringify({
+      query: `{
                 posts {
                   nodes {
                     date
@@ -55,6 +55,8 @@ export async function homePagePostsQuery(){
                         srcSet
                         sourceUrl
                         altText
+                        caption
+                        description
                         mediaDetails {
                           height
                           width
@@ -64,23 +66,22 @@ export async function homePagePostsQuery(){
                   }
                 }
               }
-            `
-        })
-    });
-    const{ data } = await response.json();
-    return data;
+            `,
+    }),
+  })
+  const { data } = await response.json()
+  return data
 }
 
-
-export async function getNodeByURI(uri){
-    const response = await fetch(import.meta.env.GRAPHQL_URL, {
-        method: 'post',
-        headers: {
+export async function getNodeByURI(uri) {
+  const response = await fetch(import.meta.env.GRAPHQL_URL, {
+    method: 'post',
+    headers: {
       'Content-Type': 'application/json',
       Authorization: import.meta.env.GRAPHQL_PASSWORD,
     },
-        body: JSON.stringify({
-            query: `query GetNodeByURI($uri: String!) {
+    body: JSON.stringify({
+      query: `query GetNodeByURI($uri: String!) {
                 nodeByUri(uri: $uri) {
                   __typename
                   isContentNode
@@ -103,6 +104,8 @@ export async function getNodeByURI(uri){
                         srcSet
                         sourceUrl
                         altText
+                        caption
+                        description
                         mediaDetails {
                           height
                           width
@@ -137,6 +140,8 @@ export async function getNodeByURI(uri){
                             srcSet
                             sourceUrl
                             altText
+                            caption
+                            description
                             mediaDetails {
                               height
                               width
@@ -149,13 +154,13 @@ export async function getNodeByURI(uri){
                 }
               }
             `,
-            variables: {
-                uri: uri
-            }
-        })
-    });
-    const{ data } = await response.json();
-    return data;
+      variables: {
+        uri: uri,
+      },
+    }),
+  })
+  const { data } = await response.json()
+  return data
 }
 
 export async function getAllUris(){
