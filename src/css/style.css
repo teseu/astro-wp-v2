@@ -1,0 +1,21 @@
+root {
+  --true-blue: #0466c8ff;
+  --sapphire: #0353a4ff;
+  --yale-blue: #023e7dff;
+  --oxford-blue: #002855ff;
+  --oxford-blue-2: #001845ff;
+  --oxford-blue-3: #001233ff;
+  --delft-blue: #33415cff;
+  --paynes-gray: #5c677dff;
+  --slate-gray: #7d8597ff;
+  --cool-gray: #979dacff;
+}
+
+
+  html[data-theme='night'] {
+    --pc: 88.34% 0.0663 206.71;
+  }
+
+  html[data-theme='business'] {
+    /* --pc: 0.883407 0.019811 251.473931; */
+  }

@@ -1,0 +1,46 @@
+---
+
+---
+
+<script is:inline>
+  if (localStorage.getItem('theme') === null) {
+    document.documentElement.setAttribute('data-theme', 'night')
+  } else document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+</script>
+<script>
+  import { themeChange } from 'theme-change'
+  themeChange()
+</script>
+
+<div class="dropdown dropdown-hover">
+  <div tabindex="0" role="button" class="text-xl btn btn-ghost m-1">Temas</div>
+  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 flex flex-col gap-2 right-1">
+    <li>
+      <button class="rounded-xl w-full btn glass" data-set-theme="emerald" data-act-class="ACTIVECLASS">
+        <span class="text-xl"> 🌞</span>
+        <span class="text-md">Light</span>
+      </button>
+    </li>
+    <li>
+      <button class="rounded-xl w-full btn glass" data-set-theme="business" data-act-class="ACTIVECLASS">
+        <span class="text-xl"> 🌑</span>
+        <span class="text-md">Dark</span>
+      </button>
+    </li>
+    <li>
+      <button class="rounded-xl w-full btn glass" data-set-theme="night" data-act-class="ACTIVECLASS">
+        <span class="text-xl"> 🌙</span>
+        <span class="text-md">Night</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .flexCol {
+    flex-direction: column;
+  }
+  .dropdown:is(:not(details)) .dropdown-content {
+    transform-origin: right;
+  }
+</style>
