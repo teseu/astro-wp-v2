@@ -1,9 +1,12 @@
-# Astro WordPress Starter
+# Astro WordPress Starter Evolution
 
 This project is meant to be a flexible starting point for people interested in using [Astro](https://astro.build/) with WordPress as a headless CMS. If you want some additional resources to help get you started, check out the blog post and video linked below.
 
+It's a continuation of the original [Astro WordPress Starter](https://astro.build/themes/details/astro-wordpress-starter/)
+
 [✍️ Read the step-by-step tutorial](https://developers.wpengine.com/blog/building-a-headless-wordpress-site-with-astro)
 [📹 Watch the video](https://www.youtube.com/watch?v=BcoxZZIfESI)
+The authentication part I'm confident that I'll put somewhere available soon.
 
 ## Requirements
 - [WordPress](https://wordpress.org/)
@@ -12,7 +15,8 @@ This project is meant to be a flexible starting point for people interested in u
 
 Add a variable to your `.env` and then hit `npm run dev`:
 
-`WORDPRESS_API_URL = https://yoursitename.com/graphql`
+`GRAPHQL_URL = https://yoursitename.com/graphql`
+`GRAPHQL_PASSWORD = yoursupersecurepassword`
 
 ### Routing and Templates
 
@@ -34,7 +38,7 @@ For example, if you want the path `/category/food-trucks` to be handled by a dif
 
 ### Menus 
 
-By default, the menu assigned to the `Primary` menu location will be used for your header menu.
+By default, the menus were replaced by a custom query of static pages for navigation, default behavior in a clean instalation of WordPress, at least in [LocalWP](https://localwp.com/).
 
 ### Rendering and Serving
 
@@ -47,5 +51,15 @@ All of the current routes are being pre-rendered to HTML and served using the [s
 ## Headless WordPress Hosting with Atlas
 
 WP Engine's Atlas platform provides a performant and user-friendly hosting platform for headless WordPress and Node-based JavaScript apps. [Create a free sandbox account](https://wpengine.com/atlas/) to try the platform, and check out our Astro deployment guide for instruction to deploy to the platform.
+
+## Notes
+
+Almost all README from the original project was preserved, after all I just create a different theme, just a shell of the great work done before.
+
+### Quick install
+
+A fresh instance of WordPress with [LocalWP](https://localwp.com/), just this [WPGraphQL](https://www.wpgraphql.com/docs/introduction) plugin installed.
+
+The env variables could be commented until the authentication is ready.
 
 
