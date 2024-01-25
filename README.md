@@ -7,11 +7,13 @@ It's a continuation of the original [Astro WordPress Starter](https://astro.buil
 [✍️ Read the step-by-step tutorial](https://developers.wpengine.com/blog/building-a-headless-wordpress-site-with-astro)
 [📹 Watch the video](https://www.youtube.com/watch?v=BcoxZZIfESI)
 
-The authentication part I'm confident that I'll put somewhere available soon.
+I added an authentication to make things more secure, check the links below.
 
 ## Requirements
 - [WordPress](https://wordpress.org/)
 - [WPGraphQL](https://www.wpgraphql.com/docs/introduction)
+- [Generating Application Passwords in WordPress](https://make.wordpress.org/core/2020/11/05/application-passwords-integration-guide/)
+- [Testing Basic Auth Headers in Postman](https://www.postman.com/raimonika/workspace/postman-learning/request/17776042-4fa53ce5-548e-4db1-82e6-188fc5a0dec7)
 - Environment Variables
 
 Add a variable to your `.env` and then hit `npm run dev`:
@@ -33,12 +35,12 @@ This project comes with built in support for Post, Page, Tag, and Category types
 
 #### Overriding Default Routing
 
-Since routes using [rest parameters in Astro](https://docs.astro.build/en/core-concepts/routing/#rest-parameters) come last in the [route priority order](https://docs.astro.build/en/core-concepts/routing/#route-priority-order), you can easily override this catch-all routing pattern by creating a more specific route to handle a given path. 
+Since routes using [rest parameters in Astro](https://docs.astro.build/en/core-concepts/routing/#rest-parameters) come last in the [route priority order](https://docs.astro.build/en/core-concepts/routing/#route-priority-order), you can easily override this catch-all routing pattern by creating a more specific route to handle a given path.
 
 For example, if you want the path `/category/food-trucks` to be handled by a different Astro component, you can add a corresponding file to the `pages` directory to override the default `...uri` route.
 
 
-### Menus 
+### Menus
 
 By default, the menus were replaced by a custom query of static pages for navigation, default behavior in a clean instalation of WordPress, at least in [LocalWP](https://localwp.com/).
 
@@ -70,5 +72,3 @@ The dates were set to Brazilian Portuguese locale, it's very simple to set to an
 A fresh instance of WordPress with [LocalWP](https://localwp.com/), just this [WPGraphQL](https://www.wpgraphql.com/docs/introduction) plugin installed.
 
 The env variables could be commented until the authentication is ready.
-
-
