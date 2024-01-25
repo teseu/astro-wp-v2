@@ -12,7 +12,7 @@ const options = {
     <a class='post-link' href={post.uri} aria-label={post.title}>
         <h3 class="text-primary-content">{post.title}</h3>
         <section>
-            <div>
+            <div class="text-prymary-content">
                 <img
                     src={post?.featuredImage?.node?.mediaItemUrl}
                     alt={post?.featuredImage?.node?.altText}
@@ -63,7 +63,6 @@ const options = {
     }
     a.post-link {
         text-decoration: none;
-        color: #000;
     }
     a.term-link {
         display: inline-block;
