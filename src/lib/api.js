@@ -50,6 +50,12 @@ export async function homePagePostsQuery() {
                         uri
                       }
                     }
+                    tags {
+                      nodes {
+                        name
+                        uri
+                      }
+                    }
                     featuredImage {
                       node {
                         srcSet
@@ -99,6 +105,12 @@ export async function getNodeByURI(uri) {
                         uri
                       }
                     }
+                    tags {
+                      nodes {
+                        name
+                        uri
+                      }
+                    }
                     featuredImage {
                       node {
                         srcSet
@@ -130,6 +142,49 @@ export async function getNodeByURI(uri) {
                         excerpt
                         uri
                         categories {
+                          nodes {
+                            name
+                            uri
+                          }
+                        }
+                        tags {
+                          nodes {
+                            name
+                            uri
+                          }
+                        }
+                        featuredImage {
+                          node {
+                            srcSet
+                            sourceUrl
+                            altText
+                            caption
+                            description
+                            mediaDetails {
+                              height
+                              width
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on Tag {
+                    id
+                    name
+                    posts {
+                      nodes {
+                        date
+                        title
+                        excerpt
+                        uri
+                        categories {
+                          nodes {
+                            name
+                            uri
+                          }
+                        }
+                        tags {
                           nodes {
                             name
                             uri

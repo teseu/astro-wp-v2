@@ -28,6 +28,9 @@ const options = {
                 { post.categories.nodes.map(category => {
                     return (<a class='term-link' href={category.uri}>{category.name}</a>)
                 })}
+                { post.tags.nodes.map(tag => {
+                    return (<a class='term-link' href={tag.uri}>{tag.name}</a>)
+                })}
                 <span class="text-primary-content"><time datetime={post.date}>{new Date(post.date).toLocaleDateString('pt-BR', options)}</time></span>
             </div>
         </section>

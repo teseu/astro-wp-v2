@@ -7,8 +7,8 @@ import Temas from './ThemeSwitch.astro'
   <div class="navbar bg-base-100">
     <div class="flex-1 items-center">
       <a href="/" class="site-name h-auto flex items-center gap-1 text-2xl font-semibold font-['Zen_Dots']"
-      > 
-        <div class="w-40 h-16 logo bg-no-repeat bg-contain"></div>
+      >
+        <div class="w-10 h-10 logo bg-no-repeat bg-contain"></div>
         {generalSettings.title}</a>
     </div>
     <nav class="font-2xl bg-base-100">
@@ -43,15 +43,15 @@ import Temas from './ThemeSwitch.astro'
 
 <style is:global>
 [data-theme="emerald"] .logo {
-  background-image: url("/teseu-logo.png");
+  background-image: url("/teseu.svg");
 }
 
 [data-theme="business"] .logo {
-  background-image: url("/teseu-logo-clara.png");
+  background-image: url("/teseu-p.svg");
 }
 
 [data-theme="night"] .logo {
-  background-image: url("/teseu-logo-clara.png");
+  background-image: url("/teseu.svg");
 }
 
 </style>

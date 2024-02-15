@@ -2,8 +2,9 @@
 import PostCard from "../PostCard.astro";
 
 const { node } = Astro.props;
----     
- <h1>{node.name} - Archive</h1>
+const title = (node.__typename == 'Tag') ? 'Tag' : 'Category'
+---
+ <h1 class="text-3xl">Posts {title} {node.name}</h1>
 
  {node.posts.nodes.map(post => {
     return (
